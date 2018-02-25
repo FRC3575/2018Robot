@@ -28,7 +28,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public void driveRobot(double leftSpeed, double rightSpeed) {
-    	driveTrain.arcadeDrive(leftSpeed, rightSpeed);
+    	driveTrain.tankDrive(leftSpeed, rightSpeed);
     }
 }
 

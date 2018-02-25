@@ -1,7 +1,6 @@
 package org.usfirst.frc.team3575.robot.subsystems;
 
 import org.usfirst.frc.team3575.robot.RobotMap;
-import org.usfirst.frc.team3575.robot.commands.DriveRobot;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -24,11 +23,11 @@ public class DriveTrain extends Subsystem {
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        setDefaultCommand(new DriveRobot());
+        //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void driveRobot(double leftSpeed, double rightSpeed) {
-    	driveTrain.arcadeDrive(leftSpeed, rightSpeed);
+    public void driveRobot() {
+    	driveTrain.tankDrive(leftSpeed, rightSpeed);
     }
 }
 

@@ -24,9 +24,5 @@ public class OI {
 		 // Bind all of the buttons to commands
 		 // elevatorUpButton.whenPressed(command);
 	 }
-	 
-	 public Joystick getJoystick() {
-		 return myJoystick;
-	 }
-}
 
+}

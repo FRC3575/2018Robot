@@ -1,8 +1,5 @@
 package org.usfirst.frc.team3575.robot.commands;
 
-import org.usfirst.frc.team3575.robot.OI;
-import org.usfirst.frc.team3575.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -11,7 +8,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DriveRobot extends Command {
 
     public DriveRobot() {
-        requires(Robot.drivetrain);
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
@@ -20,9 +18,6 @@ public class DriveRobot extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double leftSpeed = OI.myJoystick.getRawAxis(1);
-    	double rightSpeed = OI.myJoystick.getRawAxis(2);
-    	Robot.drivetrain.driveRobot(leftSpeed, rightSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -22,7 +22,6 @@ public class DriveRobot extends Command {
     protected void execute() {
     	double leftSpeed = OI.myJoystick.getRawAxis(1);
     	double rightSpeed = OI.myJoystick.getRawAxis(2);
-    	Robot.drivetrain.driveRobot(leftSpeed, rightSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
