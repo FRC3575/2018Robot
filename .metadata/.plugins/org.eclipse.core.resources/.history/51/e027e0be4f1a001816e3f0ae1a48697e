@@ -1,0 +1,28 @@
+package org.usfirst.frc.team3575.robot.subsystems;
+
+import org.usfirst.frc.team3575.robot.Drive;
+import org.usfirst.frc.team3575.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+/**
+ *
+ */
+public class Drive extends Subsystem {
+
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
+	public static Spark leftDrive = new Spark(RobotMap.LEFT_MOTOR_PORT);
+	public static Spark rightDrive = new Spark(RobotMap.RIGHT_MOTOR_PORT);
+
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        //setDefaultCommand(new MySpecialCommand());
+    }
+    
+    public void driveRobot() {
+    	
+    }
+}
+
