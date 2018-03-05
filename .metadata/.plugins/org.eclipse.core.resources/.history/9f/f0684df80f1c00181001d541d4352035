@@ -1,0 +1,30 @@
+package org.usfirst.frc.team3575.robot.subsystems;
+
+import org.usfirst.frc.team3575.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+/**
+ *
+ */
+
+private Talon ElevatorDrive= new Talon(RobotMap.elevatorPort) ;
+
+	// Put methods for controlling this subsystem
+	// here. Call these from Commands.
+
+public class Elevator extends Subsystem {
+
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
+
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        //setDefaultCommand(new MySpecialCommand());
+
+	public void elevatorup() {
+		elevatorUp.setSpeed(1);}
+		
+	public void elevatordown() {
+		elevatorDown.setSpeed(0);

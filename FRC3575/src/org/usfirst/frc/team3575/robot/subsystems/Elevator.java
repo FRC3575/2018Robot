@@ -1,0 +1,37 @@
+package org.usfirst.frc.team3575.robot.subsystems;
+
+import org.usfirst.frc.team3575.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.command.Subsystem;
+
+/**
+ *
+ */
+public class Elevator extends Subsystem {
+	
+	private Spark elevatorDrive= new Spark(RobotMap.elevatorPort) ;
+
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
+
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        //setDefaultCommand(new MySpecialCommand());
+    }
+    
+    
+    public void elevatorup() {
+    	elevatorDrive.setSpeed(1);
+   
+    	
+    }  
+    public void elevatordown() {
+    	elevatorDrive.setSpeed(-1);
+    }
+     
+     public void elevatorstop() {
+     	elevatorDrive.setSpeed(0);
+      }
+}
+
