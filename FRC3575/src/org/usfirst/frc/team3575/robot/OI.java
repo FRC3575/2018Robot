@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team3575.robot;
 
+import org.usfirst.frc.team3575.robot.commands.ClimbDown;
+import org.usfirst.frc.team3575.robot.commands.ClimbUp;
 import org.usfirst.frc.team3575.robot.commands.ElevatorDown;
 import org.usfirst.frc.team3575.robot.commands.ElevatorUp;
 
@@ -25,14 +27,17 @@ public class OI {
 	// You create one by telling it which joystick it's on and which button
 	// number it is.
 	public static Joystick myJoystick = new Joystick(RobotMap.joystickPort);
-	public static Button elevatorUpButton = new JoystickButton(myJoystick,0);
-	public static Button elevatorDownButton = new JoystickButton(myJoystick,1);
-	public static Button climberUpButton = new JoystickButton(myJoystick,2);
+	public static Button elevatorUpButton = new JoystickButton(myJoystick,4);
+	public static Button elevatorDownButton = new JoystickButton(myJoystick,2);
+	public static Button climberUpButton = new JoystickButton(myJoystick,5);
 	public static Button climberDownButton = new JoystickButton(myJoystick,3);
+
 	
 	 public OI() { 
 		 elevatorUpButton.whenPressed(new ElevatorUp());
-		 elevatorDownButton.cancelWhenPressed(new ElevatorDown());
+		 elevatorDownButton.whenPressed(new ElevatorDown());
+		 climberDownButton.whenPressed(new ClimbDown());
+		 climberUpButton.whenPressed(new ClimbUp());
 	
 	 }
 	// There are a few additional built in buttons you can use. Additionally,
