@@ -1,5 +1,6 @@
 package org.usfirst.frc.team3575.robot.subsystems;
 
+import org.usfirst.frc.team3575.robot.OI;
 import org.usfirst.frc.team3575.robot.RobotMap;
 import org.usfirst.frc.team3575.robot.commands.DriveRobot;
 
@@ -21,14 +22,40 @@ public class DriveTrain extends Subsystem {
 	private SpeedControllerGroup rightSide = new SpeedControllerGroup(rightMotor);
 	
 	private DifferentialDrive driveTrain = new DifferentialDrive(leftSide, rightSide);
+	double deadZone = 0.1;
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
+    	rightMotor.setInverted(true);
         setDefaultCommand(new DriveRobot());
     }
     
-    public void driveRobot(double leftSpeed, double rightSpeed) {
-    	driveTrain.arcadeDrive(leftSpeed, rightSpeed);
+    public void driveRobot(double throttle, double turn) {
+    	driveTrain.arcadeDrive(throttle, turn);
+    	
+    }
+    public void driveRobotTank(double leftSpeed, double rightSpeed) {
+    	driveTrain.tankDrive(leftSpeed, rightSpeed);
+    	
+    }
+    
+    public void driveRobotJoystick() {
+    	double throttle = OI.myJoystick.getRawAxis(1);
+    	double turn = OI.myJoystick.getRawAxis(2);
+    	if(Math.abs(throttle) < deadZone) {
+    		throttle = 0.0;
+    	}
+    	if(Math.abs(turn) < deadZone) {
+    		turn = 0.0;
+    	}
+    	driveTrain.arcadeDrive(throttle, turn);
+//    	leftMotor.set(throttle);
+//    	rightMotor.set(turn);
+    	
+    	
+    }
+    public void driveStop() {
+    	driveTrain.arcadeDrive(0.0, 0.0);
     }
 }
 

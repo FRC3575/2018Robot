@@ -1,18 +1,26 @@
 package org.usfirst.frc.team3575.robot.commands;
 
+import org.usfirst.frc.team3575.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  *
  */
-public class DriveAndDropBox extends CommandGroup {
+public class AutoDriveForward extends CommandGroup {
 
-    public DriveAndDropBox() {
+    public AutoDriveForward() {
         // Add Commands here:
-        addSequential(new DriveRobotForward(3, 1.0));
-        addSequential(new TurnRight());
-        addSequential(new DriveRobotForward(3, 1.0));
+        // e.g. addSequential(new Command1());
+        //      addSequential(new Command2());
         // these will run in order.
+    	
+    	addSequential(new DriveRobotForward(2.0, 1.0));
+    	addSequential(new DriveStop());
+    	
+    	requires(Robot.mydrive);
+    	
+    	
 
         // To run multiple commands at the same time,
         // use addParallel()

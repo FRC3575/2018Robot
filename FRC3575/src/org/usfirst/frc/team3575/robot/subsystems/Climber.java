@@ -1,6 +1,8 @@
 package org.usfirst.frc.team3575.robot.subsystems;
 
+import org.usfirst.frc.team3575.robot.OI;
 import org.usfirst.frc.team3575.robot.RobotMap;
+import org.usfirst.frc.team3575.robot.commands.ClimbStop;
 
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -17,20 +19,25 @@ public class Climber extends Subsystem {
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new ClimbStop());
+    	
     }
     
-    
-    public void climbUp() {
-    	climberDrive.setSpeed(1);
+    public void climbJoystick() {
+    	double climbThrottle = OI.myJoystick.getRawAxis(3);
+    	climberDrive.setSpeed(climbThrottle);
+    	
+    }
+    public void climbUp(double climbThrottle) {
+    	climberDrive.setSpeed(climbThrottle);
     
     	
     }  
-    public void climbDown() {
-    	climberDrive.setSpeed(-1);
+    public void climbDown(double climbThrottle) {
+    	climberDrive.setSpeed(climbThrottle);
     
     }
       public void climbStop() {
-     	climberDrive.setSpeed(0);
+     	climberDrive.setSpeed(0.0);
       }
 }

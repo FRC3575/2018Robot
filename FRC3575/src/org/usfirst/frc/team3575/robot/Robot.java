@@ -7,11 +7,13 @@
 
 package org.usfirst.frc.team3575.robot;
 
+import org.usfirst.frc.team3575.robot.commands.DriveAndDropBox;
 import org.usfirst.frc.team3575.robot.subsystems.Climber;
 import org.usfirst.frc.team3575.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team3575.robot.subsystems.Elevator;
+import org.usfirst.frc.team3575.robot.subsystems.Punch;
 
-
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -32,6 +34,8 @@ public class Robot extends TimedRobot {
 	public static Climber myclimber= new Climber();
 	public static DriveTrain mydrive= new DriveTrain();
 	public static Elevator myelevator= new Elevator();
+	public static Punch myPunch= new Punch(); 
+	public static Compressor mycompressor = new Compressor(0);
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -43,6 +47,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_oi = new OI();
+		m_autonomousCommand = new DriveAndDropBox(); 
+		mycompressor.setClosedLoopControl(true);
 	
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);

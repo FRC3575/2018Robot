@@ -20,9 +20,7 @@ public class DriveRobot extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double leftSpeed = OI.myJoystick.getRawAxis(1);
-    	double rightSpeed = OI.myJoystick.getRawAxis(2);
-    	Robot.mydrive.driveRobot(leftSpeed, rightSpeed);
+    	Robot.mydrive.driveRobotJoystick();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,10 +30,12 @@ public class DriveRobot extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.mydrive.driveStop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }

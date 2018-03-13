@@ -1,6 +1,9 @@
 package org.usfirst.frc.team3575.robot.subsystems;
 
+import org.usfirst.frc.team3575.robot.OI;
+import org.usfirst.frc.team3575.robot.Robot;
 import org.usfirst.frc.team3575.robot.RobotMap;
+import org.usfirst.frc.team3575.robot.commands.ElevatorStop;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -17,21 +20,26 @@ public class Elevator extends Subsystem {
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new ElevatorStop());
     }
     
     
-    public void elevatorup() {
-    	elevatorDrive.setSpeed(1);
-   
+    public void elevatorJoystick() {
+    	double elevatorThrottle = OI.myJoystick.getRawAxis(3);
+    	elevatorDrive.setSpeed(elevatorThrottle);
     	
     }  
-    public void elevatordown() {
-    	elevatorDrive.setSpeed(-1);
+    public void elevatorup(double elevatorThrottle) {
+    	elevatorDrive.setSpeed(elevatorThrottle);
+    	
+    }  
+    public void elevatordown(double elevatorThrottle) {
+    	elevatorDrive.setSpeed(elevatorThrottle);
     }
      
      public void elevatorstop() {
-     	elevatorDrive.setSpeed(0);
+     	elevatorDrive.setSpeed(0.0);
       }
+     
 }
 

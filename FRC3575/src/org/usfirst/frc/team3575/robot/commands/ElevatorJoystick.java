@@ -1,6 +1,5 @@
 package org.usfirst.frc.team3575.robot.commands;
 
-import org.usfirst.frc.team3575.robot.OI;
 import org.usfirst.frc.team3575.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -8,11 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class ElevatorDown extends Command {
+public class ElevatorJoystick extends Command {
 
-    public ElevatorDown() {
+    public ElevatorJoystick() {
         // Use requires() here to declare subsystem dependencies
-         requires(Robot.myelevator);
+        // eg. requires(chassis);
+    	requires(Robot.myelevator);
     }
 
     // Called just before this Command runs the first time
@@ -21,8 +21,7 @@ public class ElevatorDown extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double elevatorThrottle = OI.myJoystick.getRawAxis(3);
-    	Robot.myelevator.elevatordown(-Math.abs(elevatorThrottle));
+    	Robot.myelevator.elevatorJoystick();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,7 +31,7 @@ public class ElevatorDown extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.myelevator.elevatorstop(); 
+    	Robot.myelevator.elevatorstop();
     }
 
     // Called when another command which requires one or more of the same

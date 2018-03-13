@@ -11,8 +11,10 @@ import org.usfirst.frc.team3575.robot.commands.ClimbDown;
 import org.usfirst.frc.team3575.robot.commands.ClimbUp;
 import org.usfirst.frc.team3575.robot.commands.ElevatorDown;
 import org.usfirst.frc.team3575.robot.commands.ElevatorUp;
+import org.usfirst.frc.team3575.robot.commands.PunchForward;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -31,14 +33,15 @@ public class OI {
 	public static Button elevatorDownButton = new JoystickButton(myJoystick,2);
 	public static Button climberUpButton = new JoystickButton(myJoystick,5);
 	public static Button climberDownButton = new JoystickButton(myJoystick,3);
-
+	public static Button sendPunchButton = new JoystickButton(myJoystick, 1);
 	
 	 public OI() { 
-		 elevatorUpButton.whenPressed(new ElevatorUp());
-		 elevatorDownButton.whenPressed(new ElevatorDown());
+		 elevatorUpButton.whileHeld(new ElevatorUp());
+		 elevatorDownButton.whileHeld(new ElevatorDown());
 		 climberDownButton.whenPressed(new ClimbDown());
 		 climberUpButton.whenPressed(new ClimbUp());
-	
+		sendPunchButton.whileHeld(new PunchForward());
+		
 	 }
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
