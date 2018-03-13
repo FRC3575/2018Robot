@@ -1,7 +1,6 @@
 package org.usfirst.frc.team3575.robot.subsystems;
 
 import org.usfirst.frc.team3575.robot.OI;
-import org.usfirst.frc.team3575.robot.Robot;
 import org.usfirst.frc.team3575.robot.RobotMap;
 import org.usfirst.frc.team3575.robot.commands.ElevatorStop;
 

@@ -14,7 +14,6 @@ import org.usfirst.frc.team3575.robot.commands.ElevatorUp;
 import org.usfirst.frc.team3575.robot.commands.PunchForward;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
