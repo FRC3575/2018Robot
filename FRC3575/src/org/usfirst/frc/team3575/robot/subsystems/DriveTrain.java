@@ -15,27 +15,35 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public class DriveTrain extends Subsystem {
 
     // Define and set ports for both left and right drives
-	private Spark leftMotor = new Spark(RobotMap.leftMotor);
-	private Spark rightMotor = new Spark(RobotMap.rightMotor);
+	private Spark leftMotor;
+	private Spark rightMotor;
 	
-	private SpeedControllerGroup leftSide = new SpeedControllerGroup(leftMotor);
-	private SpeedControllerGroup rightSide = new SpeedControllerGroup(rightMotor);
+	private SpeedControllerGroup leftSide;
+	private SpeedControllerGroup rightSide;
 	
-	private DifferentialDrive driveTrain = new DifferentialDrive(leftSide, rightSide);
-	double deadZone = 0.1;
+	private DifferentialDrive driveTrain;
+	
+	private double deadZone = 0.1;
+	
+	public DriveTrain() {
+		leftMotor = new Spark(RobotMap.leftMotor);
+		rightMotor = new Spark(RobotMap.rightMotor);
+		
+		leftSide = new SpeedControllerGroup(leftMotor);
+		rightSide = new SpeedControllerGroup(rightMotor);
+		
+		rightMotor.setInverted(true);
+		
+		driveTrain = new DifferentialDrive(leftSide, rightSide);
+	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-    	rightMotor.setInverted(true);
-        setDefaultCommand(new DriveRobot());
+    	setDefaultCommand(new DriveRobot());
     }
     
     public void driveRobot(double throttle, double turn) {
     	driveTrain.arcadeDrive(throttle, turn);
-    	
-    }
-    public void driveRobotTank(double leftSpeed, double rightSpeed) {
-    	driveTrain.tankDrive(leftSpeed, rightSpeed);
     	
     }
     
@@ -48,12 +56,10 @@ public class DriveTrain extends Subsystem {
     	if(Math.abs(turn) < deadZone) {
     		turn = 0.0;
     	}
-    	driveTrain.arcadeDrive(throttle, turn);
-//    	leftMotor.set(throttle);
-//    	rightMotor.set(turn);
-    	
+    	driveTrain.arcadeDrive(throttle, turn);   	
     	
     }
+    
     public void driveStop() {
     	driveTrain.arcadeDrive(0.0, 0.0);
     }

@@ -10,10 +10,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  *
  */
 public class Punch extends Subsystem {
-	public DoubleSolenoid punchSolenoid = new DoubleSolenoid(1,0);
-	public Compressor compressor = new Compressor(0);
+	private DoubleSolenoid punchSolenoid;
+	public Compressor compressor;
 	
-
+	public Punch() {
+		punchSolenoid = new DoubleSolenoid(1,0);
+		compressor = new Compressor(0);
+	}
+	
+	
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
