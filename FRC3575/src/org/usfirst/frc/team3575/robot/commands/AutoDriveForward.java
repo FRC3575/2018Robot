@@ -15,7 +15,7 @@ public class AutoDriveForward extends CommandGroup {
         //      addSequential(new Command2());
         // these will run in order.
     	
-    	addSequential(new DriveRobotForward(2.0, 1.0));
+    	addSequential(new DriveRobotForward(4.0, 1.0));
     	addSequential(new DriveStop());
     	
     	requires(Robot.mydrive);

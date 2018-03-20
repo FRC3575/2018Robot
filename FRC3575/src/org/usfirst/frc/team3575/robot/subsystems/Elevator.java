@@ -30,7 +30,6 @@ public class Elevator extends Subsystem {
     }  
     public void elevatorup(double elevatorThrottle) {
     	elevatorDrive.setSpeed(elevatorThrottle);
-    	
     }  
     public void elevatordown(double elevatorThrottle) {
     	elevatorDrive.setSpeed(elevatorThrottle);

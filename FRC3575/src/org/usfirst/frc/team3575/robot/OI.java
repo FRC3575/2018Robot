@@ -23,16 +23,16 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	//// CREATING BUTTONS
+	//// CREATING BUTTONS 
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
 	// You create one by telling it which joystick it's on and which button
 	// number it is.
 	public static Joystick myJoystick = new Joystick(RobotMap.joystickPort);
-	public static Button elevatorUpButton = new JoystickButton(myJoystick,4);
-	public static Button elevatorDownButton = new JoystickButton(myJoystick,2);
-	public static Button climberUpButton = new JoystickButton(myJoystick,5);
-	public static Button climberDownButton = new JoystickButton(myJoystick,3);
+	public static Button elevatorUpButton = new JoystickButton(myJoystick,6);
+	public static Button elevatorDownButton = new JoystickButton(myJoystick,4);
+	public static Button climberUpButton = new JoystickButton(myJoystick,3);
+	public static Button climberDownButton = new JoystickButton(myJoystick,5);
 	public static Button sendPunchButton = new JoystickButton(myJoystick, 1);
 	
 	 public OI() { 

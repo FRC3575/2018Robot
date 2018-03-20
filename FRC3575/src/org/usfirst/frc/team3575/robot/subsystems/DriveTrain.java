@@ -43,7 +43,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public void driveRobot(double throttle, double turn) {
-    	driveTrain.arcadeDrive(throttle, turn);
+    	driveTrain.arcadeDrive(throttle * 0.8, -(turn));
     	
     }
     
@@ -56,7 +56,7 @@ public class DriveTrain extends Subsystem {
     	if(Math.abs(turn) < deadZone) {
     		turn = 0.0;
     	}
-    	driveTrain.arcadeDrive(throttle, turn);   	
+    	driveTrain.arcadeDrive(throttle, -turn);   	
     	
     }
     

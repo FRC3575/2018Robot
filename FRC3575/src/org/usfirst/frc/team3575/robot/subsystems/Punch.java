@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3575.robot.subsystems;
 
 import org.usfirst.frc.team3575.robot.commands.PunchForward;
+import org.usfirst.frc.team3575.robot.commands.PunchReverse;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
@@ -25,7 +26,7 @@ public class Punch extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-    	setDefaultCommand(new PunchForward());
+    	setDefaultCommand(new PunchReverse());
     }
     	public void punchForward() {
     		punchSolenoid.set(DoubleSolenoid.Value.kForward);

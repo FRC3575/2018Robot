@@ -7,12 +7,14 @@
 
 package org.usfirst.frc.team3575.robot;
 
+import org.usfirst.frc.team3575.robot.commands.AutoDriveForward;
 import org.usfirst.frc.team3575.robot.commands.DriveAndDropBox;
 import org.usfirst.frc.team3575.robot.subsystems.Climber;
 import org.usfirst.frc.team3575.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team3575.robot.subsystems.Elevator;
 import org.usfirst.frc.team3575.robot.subsystems.Punch;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -47,9 +49,14 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_oi = new OI();
-		m_autonomousCommand = new DriveAndDropBox(); 
+		//m_autonomousCommand = new DriveAndDropBox(); 
+		m_autonomousCommand = new AutoDriveForward();
+		
 		mycompressor.setClosedLoopControl(true);
 	
+		// Camera System
+		CameraServer.getInstance().startAutomaticCapture();
+		
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
@@ -82,7 +89,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		m_autonomousCommand = m_chooser.getSelected();
+		//m_autonomousCommand = m_chooser.getSelected();
 
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -90,6 +97,8 @@ public class Robot extends TimedRobot {
 		 * = new MyAutoCommand(); break; case "Default Auto": default:
 		 * autonomousCommand = new ExampleCommand(); break; }
 		 */
+		
+		m_autonomousCommand = new DriveAndDropBox(); 
 
 		// schedule the autonomous command (example)
 		if (m_autonomousCommand != null) {

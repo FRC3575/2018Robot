@@ -9,9 +9,20 @@ public class DriveAndDropBox extends CommandGroup {
 
     public DriveAndDropBox() {
         // Add Commands here:
-        addSequential(new DriveRobotForward(3, 1.0));
-        addSequential(new TurnRight());
-        addSequential(new DriveRobotForward(3, 1.0));
+
+    	
+    	// raise elevator
+    	//addSequential(new ElevatorUpAuto());
+    	
+    	// Drive Forward
+    	addSequential(new DriveRobotForward(2.0, -0.7));
+        
+        
+        // Punch Forward
+    	//addSequential(new  PunchForward());
+        
+        
+        
         // these will run in order.
 
         // To run multiple commands at the same time,
