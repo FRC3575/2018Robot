@@ -1,5 +1,7 @@
 package org.usfirst.frc.team3575.robot.commands;
 
+import org.usfirst.frc.team3575.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
@@ -15,7 +17,7 @@ public class DriveAndDropBox extends CommandGroup {
     	//addSequential(new ElevatorUpAuto());
     	
     	// Drive Forward
-    	addSequential(new DriveRobotForward(2.0, -0.7));
+    	addSequential(new DriveRobotForward(RobotMap.driveForwardTime, RobotMap.driveForwardSpeed));
         
         
         // Punch Forward
