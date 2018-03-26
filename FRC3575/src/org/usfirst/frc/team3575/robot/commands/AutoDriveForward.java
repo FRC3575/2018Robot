@@ -19,8 +19,6 @@ public class AutoDriveForward extends CommandGroup {
     	addSequential(new DriveStop());
     	
     	requires(Robot.mydrive);
-    	
-    	
 
         // To run multiple commands at the same time,
         // use addParallel()

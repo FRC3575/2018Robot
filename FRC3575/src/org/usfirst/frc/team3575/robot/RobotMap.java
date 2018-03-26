@@ -25,14 +25,14 @@ public class RobotMap {
 	 
 	 //autonomous code 
 	 
-	 public static double driveForwardTime= 2.0;
+	 public static double driveForwardTime= 2.2;
 	 public static double driveForwardSpeed= -0.7;
-	 public static double elevatorUpTimeOut= 1.7;
+	 public static double elevatorUpTimeOut= 1.3;
 	 public static double elevatorUpSpeed= 1.0;
 	 
 	 //telop throttling 
 	 
-	 public static double driveThrottle= 0.8;
-	 public static double turnThrottle= 1.0;
+	 public static double driveThrottle= 0.9;
+	 public static double turnThrottle= 0.9;
 	 
 }

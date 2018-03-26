@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team3575.robot;
 
+import org.usfirst.frc.team3575.robot.commands.BottomPunchForward;
+import org.usfirst.frc.team3575.robot.commands.BottomPunchReverse;
 import org.usfirst.frc.team3575.robot.commands.ClimbDown;
 import org.usfirst.frc.team3575.robot.commands.ClimbUp;
 import org.usfirst.frc.team3575.robot.commands.ElevatorDown;
@@ -28,21 +30,23 @@ public class OI {
 	//// joystick.
 	// You create one by telling it which joystick it's on and which button
 	// number it is.
+	
 	public static Joystick myJoystick = new Joystick(RobotMap.joystickPort);
 	public static Button elevatorUpButton = new JoystickButton(myJoystick,6);
 	public static Button elevatorDownButton = new JoystickButton(myJoystick,4);
 	public static Button climberUpButton = new JoystickButton(myJoystick,3);
 	public static Button climberDownButton = new JoystickButton(myJoystick,5);
-	public static Button sendPunchButton = new JoystickButton(myJoystick, 1);
+	public static Button sendPunchButton = new JoystickButton(myJoystick,2);
+	public static Button sendBottomPunchButton = new JoystickButton(myJoystick,1);
 	
-	 public OI() { 
+	public OI() { 
 		 elevatorUpButton.whileHeld(new ElevatorUp());
 		 elevatorDownButton.whileHeld(new ElevatorDown());
 		 climberDownButton.whileHeld(new ClimbDown());
 		 climberUpButton.whileHeld(new ClimbUp());
 		 sendPunchButton.whenPressed(new PunchForward());
 		 sendPunchButton.whenReleased(new PunchReverse());
-		
+		 sendBottomPunchButton.whenPressed(new BottomPunchForward());
+		 sendBottomPunchButton.whenReleased(new BottomPunchReverse());
 	 }
-
 }

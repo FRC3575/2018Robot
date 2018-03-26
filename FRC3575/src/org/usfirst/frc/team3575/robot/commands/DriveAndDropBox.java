@@ -14,7 +14,7 @@ public class DriveAndDropBox extends CommandGroup {
 
     	
     	// raise elevator
-    	//addSequential(new ElevatorUpAuto());
+    	addSequential(new ElevatorUpAuto());
     	
     	// Drive Forward
     	addSequential(new DriveRobotForward(RobotMap.driveForwardTime, RobotMap.driveForwardSpeed));

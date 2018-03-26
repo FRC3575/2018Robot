@@ -1,6 +1,5 @@
 package org.usfirst.frc.team3575.robot.subsystems;
 
-import org.usfirst.frc.team3575.robot.commands.PunchForward;
 import org.usfirst.frc.team3575.robot.commands.PunchReverse;
 
 import edu.wpi.first.wpilibj.Compressor;
@@ -34,7 +33,5 @@ public class Punch extends Subsystem {
     	}
     	public void punchReverse() {
     		punchSolenoid.set(DoubleSolenoid.Value.kReverse);
-    }
-    
+    }   
 }
-

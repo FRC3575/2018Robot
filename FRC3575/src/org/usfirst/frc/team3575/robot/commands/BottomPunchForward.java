@@ -7,20 +7,20 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class PunchForward extends Command {
+public class BottomPunchForward extends Command {
 
-    public PunchForward() {
+    public BottomPunchForward() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.myPunch);
+        requires(Robot.myBottomPunch);
     }
 
     // Called just before this Command runs the first time
-    protected void initialize() { 
+    protected void initialize() {
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.myPunch.punchForward();
+    	Robot.myBottomPunch.bottomPunchForward(); 
     }
 
     // Make this return true when this Command no longer needs to run execute()
