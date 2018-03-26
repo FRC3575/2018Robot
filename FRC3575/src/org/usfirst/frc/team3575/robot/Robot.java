@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
+	/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
@@ -9,6 +9,7 @@ package org.usfirst.frc.team3575.robot;
 
 import org.usfirst.frc.team3575.robot.commands.AutoDriveForward;
 import org.usfirst.frc.team3575.robot.commands.DriveAndDropBox;
+import org.usfirst.frc.team3575.robot.subsystems.BottomPunch;
 import org.usfirst.frc.team3575.robot.subsystems.Climber;
 import org.usfirst.frc.team3575.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team3575.robot.subsystems.Elevator;
@@ -38,6 +39,7 @@ public class Robot extends TimedRobot {
 	public static Elevator myelevator= new Elevator();
 	public static Punch myPunch= new Punch(); 
 	public static Compressor mycompressor = new Compressor(0);
+	public static BottomPunch myBottomPunch = new BottomPunch();
 
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();

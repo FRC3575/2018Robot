@@ -1,38 +1,36 @@
 package org.usfirst.frc.team3575.robot.commands;
 
 import org.usfirst.frc.team3575.robot.Robot;
-import org.usfirst.frc.team3575.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class ElevatorUpAuto extends Command {
+public class BottomPunchReverse extends Command {
 
-    public ElevatorUpAuto() {
+    public BottomPunchReverse() {
         // Use requires() here to declare subsystem dependencies
-    	requires(Robot.myelevator);
-    	setTimeout(RobotMap.elevatorUpTimeOut);
+        requires(Robot.myBottomPunch);
     }
-
-    // Called just before this Command runs the first time
-    protected void initialize() {
+   // Called just before this Command runs the first time
+   
+    protected void initialize() { 	
     }
-
     // Called repeatedly when this Command is scheduled to run
+    
     protected void execute() {
-    	Robot.myelevator.elevatorup(RobotMap.elevatorUpSpeed);
+    	Robot.myBottomPunch.bottomPunchReverse();	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	return isTimedOut();
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-    	Robot.myelevator.elevatorstop();
+    	
     }
 
     // Called when another command which requires one or more of the same

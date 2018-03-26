@@ -6,7 +6,6 @@ import org.usfirst.frc.team3575.robot.commands.ElevatorStop;
 
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
 /**
  *
  */
@@ -21,12 +20,10 @@ public class Elevator extends Subsystem {
         // Set the default command for a subsystem here.
         setDefaultCommand(new ElevatorStop());
     }
-    
-    
+     
     public void elevatorJoystick() {
     	double elevatorThrottle = OI.myJoystick.getRawAxis(3);
-    	elevatorDrive.setSpeed(elevatorThrottle);
-    	
+    	elevatorDrive.setSpeed(elevatorThrottle);	
     }  
     public void elevatorup(double elevatorThrottle) {
     	elevatorDrive.setSpeed(elevatorThrottle);
@@ -34,10 +31,7 @@ public class Elevator extends Subsystem {
     public void elevatordown(double elevatorThrottle) {
     	elevatorDrive.setSpeed(elevatorThrottle);
     }
-     
      public void elevatorstop() {
      	elevatorDrive.setSpeed(0.0);
       }
-     
 }
-
